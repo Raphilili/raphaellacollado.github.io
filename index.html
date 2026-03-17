@@ -518,7 +518,7 @@ span[data-lang].active { display: inline; }
         <a href="#work" class="btn-primary">
           <span data-lang="en" class="active">See my work</span><span data-lang="es">Ver mi trabajo</span> →
         </a>
-        <a href="mailto:raphaella.collado@gmail.com" class="btn-outline">
+        <a href="/cdn-cgi/l/email-protection#3f4d5e4f575e5a53535e115c5053535e5b507f58525e5653115c5052" class="btn-outline">
           <span data-lang="en" class="active">Get in touch</span><span data-lang="es">Contacto</span>
         </a>
       </div>
@@ -719,18 +719,36 @@ span[data-lang].active { display: inline; }
 
       <!-- BOTANICAL GARDEN / PRADA -->
       <div class="pc wide fade-up" data-cat="styling">
-        <a class="project-card" href="#" target="_blank">
-          <div class="tp r169" style="background:#1E1A14;">
-            <div class="tp-bg-word">PRADA</div>
-            <div class="tp-inner"><span class="tp-label">[ Replace with Botanical Garden / Prada photos ]</span></div>
+        <div class="project-card" style="cursor:default;">
+          <!-- 3-PHOTO GRID -->
+          <div style="display:grid; grid-template-rows: 260px 180px; grid-template-columns: 1fr 1fr;">
+            <!-- Big photo top — spans full width -->
+            <img src="images/botanical-garden-1.jpg" alt="Botanical Garden"
+              style="grid-column:1/3; grid-row:1; width:100%; height:100%; object-fit:cover; display:block; transition:transform .6s ease;"
+              onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+            <!-- Bottom left -->
+            <img src="images/botanical-garden-2.jpg" alt="Botanical Garden"
+              style="width:100%; height:100%; object-fit:cover; display:block; border-top:2px solid #0D0D0D; border-right:1px solid #0D0D0D; transition:transform .6s ease;"
+              onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+            <!-- Bottom right -->
+            <img src="images/botanical-garden-3.jpg" alt="Botanical Garden"
+              style="width:100%; height:100%; object-fit:cover; display:block; border-top:2px solid #0D0D0D; border-left:1px solid #0D0D0D; transition:transform .6s ease;"
+              onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
           </div>
-          <div class="project-info">
-            <span class="project-tag">Fashion Styling · Prada · University Project</span>
-            <div class="project-title">BOTANICAL GARDEN</div>
-            <div class="project-desc"><span data-lang="en" class="active">Luxury brand styling project inspired by Prada. Editorial collection of images with a botanical concept.</span><span data-lang="es">Proyecto de styling de lujo inspirado en Prada. Colección editorial con concepto botánico.</span></div>
-            <span class="uni-badge">University</span>
+          <!-- INFO BAR -->
+          <div style="padding:20px 24px; display:flex; justify-content:space-between; align-items:center; background:#F5F2EE;">
+            <div>
+              <span style="font-size:9px; letter-spacing:0.22em; text-transform:uppercase; color:#C0157A; display:block; margin-bottom:4px;">Fashion Styling · Prada</span>
+              <span style="font-family:'Bebas Neue',sans-serif; font-size:26px; color:#0D0D0D; letter-spacing:0.03em;">BOTANICAL GARDEN</span>
+              <span style="display:inline-block; margin-left:10px; font-size:9px; letter-spacing:0.12em; text-transform:uppercase; color:#9A9490; background:rgba(13,13,13,0.06); padding:4px 10px; border-radius:2px; border:1px solid rgba(13,13,13,0.12);">University</span>
+            </div>
+            <a href="pdfs/botanical-garden.pdf" target="_blank"
+              style="display:inline-flex; align-items:center; gap:8px; background:#C0157A; color:#fff; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; padding:12px 20px; border-radius:2px; text-decoration:none; white-space:nowrap; transition:background .2s; font-family:'DM Sans',sans-serif;"
+              onmouseover="this.style.background='#8A0F57'" onmouseout="this.style.background='#C0157A'">
+              <span data-lang="en" class="active">View project</span><span data-lang="es">Ver proyecto</span> →
+            </a>
           </div>
-        </a>
+        </div>
       </div>
 
       <!-- GOD COMPLEX / GUCCI — PRODUCTION -->
@@ -874,7 +892,7 @@ span[data-lang].active { display: inline; }
     <a href="https://linkedin.com/in/raphaella-collado-cahuas" target="_blank" class="contact-btn dark">LinkedIn →</a>
     <a href="https://tiktok.com/@raphaellacollado" target="_blank" class="contact-btn dark">TikTok →</a>
   </div>
-  <a href="mailto:raphaella.collado@gmail.com" class="contact-email fade-up">raphaella.collado@gmail.com</a>
+  <a href="/cdn-cgi/l/email-protection#4a382b3a222b2f26262b64292526262b2e250a2d272b232664292527" class="contact-email fade-up"><span class="__cf_email__" data-cfemail="c4b6a5b4aca5a1a8a8a5eaa7aba8a8a5a0ab84a3a9a5ada8eaa7aba9">[email&#160;protected]</span></a>
 </section>
 
 <!-- FOOTER -->
@@ -883,7 +901,7 @@ span[data-lang].active { display: inline; }
   <span class="footer-note">Raphaella Collado Cahuas · Lima, Perú · 2024</span>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // CURSOR
 const cur = document.getElementById('cur'), curR = document.getElementById('cur-r');
 let mx=0,my=0,rx=0,ry=0;
@@ -932,11 +950,4 @@ const obs = new IntersectionObserver(entries=>{
     }
   });
 },{threshold:0.1});
-document.querySelectorAll('.fade-up,.fade-left').forEach(el=>obs.observe(el));
-
-// STAGGER CARDS
-document.querySelectorAll('.projects-grid .pc').forEach((c,i)=>c.style.transitionDelay=(i*.07)+'s');
-document.querySelectorAll('.ugc-card').forEach((c,i)=>c.style.transitionDelay=(i*.08)+'s');
-</script>
-</body>
-</html>
+documen
