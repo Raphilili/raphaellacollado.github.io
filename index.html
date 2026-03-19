@@ -130,7 +130,11 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; j
 .ugc-heading { font-family: 'Bebas Neue', sans-serif; font-size: clamp(56px,8vw,100px); color: #fff; line-height: .9; letter-spacing: 0.02em; }
 .ugc-heading .mgn { color: var(--magenta); }
 .ugc-desc { font-size: 14px; color: rgba(245,242,238,.5); line-height: 1.8; max-width: 420px; }
-.ugc-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; }
+.ugc-embed-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+.ugc-embed-card { border-radius: 3px; overflow: hidden; }
+.ugc-embed-wrap { background: #0D0D0D; border-radius: 3px; overflow: hidden; min-height: 400px; display: flex; align-items: center; justify-content: center; }
+.ugc-embed-wrap .instagram-media, .ugc-embed-wrap .tiktok-embed { width: 100% !important; min-width: unset !important; }
+@media (max-width: 900px) { .ugc-embed-grid { grid-template-columns: repeat(2,1fr); } }
 .ugc-card { aspect-ratio: 9/16; border-radius: 3px; border: 1.5px solid rgba(255,255,255,.08); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; cursor: pointer; text-decoration: none; transition: border-color .3s, transform .3s; background: rgba(255,255,255,.03); position: relative; overflow: hidden; }
 .ugc-card:hover { border-color: var(--magenta); transform: translateY(-6px); }
 .ugc-num { font-family: 'Bebas Neue', sans-serif; font-size: 48px; color: rgba(255,255,255,.06); position: absolute; top: 20px; left: 20px; line-height: 1; }
