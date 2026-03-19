@@ -24,6 +24,7 @@ body { background: var(--white); color: var(--black); font-family: 'DM Sans', sa
 #cur { position: fixed; width: 10px; height: 10px; background: var(--magenta); border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%,-50%); transition: width .3s, height .3s; mix-blend-mode: multiply; }
 #cur-r { position: fixed; width: 40px; height: 40px; border: 1.5px solid var(--magenta); border-radius: 50%; pointer-events: none; z-index: 9998; transform: translate(-50%,-50%); transition: all .1s; opacity: .35; }
 
+/* NAV */
 nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 20px 48px; background: rgba(245,242,238,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(13,13,13,0.06); }
 .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 0.08em; color: var(--black); text-decoration: none; }
 .nav-logo span { color: var(--magenta); }
@@ -35,6 +36,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; j
 .lang-btn { font-size: 10px; letter-spacing: .1em; text-transform: uppercase; padding: 4px 10px; border: none; border-radius: 16px; cursor: pointer; background: transparent; color: var(--gray); transition: all .2s; font-family: 'DM Sans', sans-serif; }
 .lang-btn.active { background: var(--magenta); color: #fff; }
 
+/* HERO */
 #hero { min-height: 100vh; display: grid; grid-template-rows: auto 1fr; padding-top: 80px; overflow: hidden; }
 .hero-ticker { background: var(--magenta); padding: 10px 0; overflow: hidden; white-space: nowrap; }
 .ticker-inner { display: inline-flex; animation: ticker 18s linear infinite; }
@@ -62,11 +64,13 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; j
 .hero-stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--magenta); line-height: 1; }
 .hero-stat-label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray); margin-top: 2px; }
 
+/* MARQUEE */
 .marquee-divider { background: var(--black); padding: 14px 0; overflow: hidden; white-space: nowrap; }
 .marquee-inner { display: inline-flex; animation: ticker 22s linear infinite; }
 .marquee-item { font-family: 'Playfair Display', serif; font-style: italic; font-size: 18px; color: rgba(245,242,238,0.3); padding: 0 28px; }
 .marquee-item.hl { color: var(--magenta-light); }
 
+/* ABOUT */
 #about { display: grid; grid-template-columns: 1fr 1fr; min-height: 80vh; }
 .about-left { background: var(--black); padding: 100px 64px; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; }
 .about-bg-word { position: absolute; font-family: 'Bebas Neue', sans-serif; font-size: 220px; color: rgba(255,255,255,0.03); top: 50%; left: -20px; transform: translateY(-50%); pointer-events: none; user-select: none; line-height: 1; }
@@ -88,6 +92,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; j
 .skill-tags { display: flex; gap: 6px; flex-wrap: wrap; }
 .skill-tag { font-size: 10px; letter-spacing: 0.1em; background: #fff; color: var(--gray); padding: 4px 10px; border-radius: 2px; }
 
+/* WORK */
 #work { padding: 100px 0; background: var(--white); }
 .work-top { padding: 0 48px; margin-bottom: 64px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 24px; }
 .work-heading { font-family: 'Bebas Neue', sans-serif; font-size: clamp(56px, 8vw, 110px); line-height: .9; letter-spacing: 0.02em; }
@@ -103,39 +108,23 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; j
 .pc.narrow { grid-column: span 4; }
 .pc.full { grid-column: span 12; }
 
-.project-card { position: relative; overflow: hidden; border-radius: 3px; background: var(--black); cursor: pointer; display: block; text-decoration: none; }
-.project-card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(13,13,13,.9) 0%, rgba(13,13,13,.2) 50%, transparent 100%); transition: opacity .4s; }
-.project-thumb { width: 100%; display: block; aspect-ratio: 16/10; object-fit: cover; transition: transform .7s ease, filter .4s; filter: saturate(0.8); }
-.pc.tall .project-thumb { aspect-ratio: 3/4; }
-.project-card:hover .project-thumb { transform: scale(1.06); filter: saturate(1); }
-.project-card:hover::after { opacity: .7; }
-.project-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 28px 28px 24px; z-index: 2; }
-.project-tag { font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--magenta); margin-bottom: 8px; display: block; }
-.project-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(22px, 3vw, 36px); color: #fff; line-height: 1; letter-spacing: 0.03em; margin-bottom: 6px; }
-.project-desc { font-size: 12px; color: rgba(255,255,255,.55); line-height: 1.5; }
-.project-pill { display: inline-block; margin-top: 10px; background: var(--magenta); color: #fff; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; padding: 5px 12px; border-radius: 2px; }
-.uni-badge { background: rgba(245,242,238,0.15); color: rgba(245,242,238,0.5); font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; border: 1px solid rgba(245,242,238,0.2); margin-left: 8px; }
-.tp { width: 100%; display: block; position: relative; overflow: hidden; }
-.tp.r169 { aspect-ratio: 16/10; }
-.tp.r34 { aspect-ratio: 3/4; }
-.tp-inner { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
-.tp-bg-word { position: absolute; font-family: 'Bebas Neue', sans-serif; font-size: 120px; opacity: 0.06; line-height: 1; color: #fff; pointer-events: none; white-space: nowrap; }
-.tp-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,.3); text-align: center; padding: 0 20px; z-index: 1; }
+/* COVER CARD — used for all projects */
+.cover-card { border-radius: 3px; overflow: hidden; background: var(--white); border: 1px solid var(--gray-light); }
+.cover-img { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; transition: transform .6s ease; }
+.cover-img.wide { aspect-ratio: 21/7; }
+.cover-card:hover .cover-img { transform: scale(1.03); }
+.cover-info { padding: 20px 24px; display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; background: var(--white); flex-wrap: wrap; }
+.cover-tag { font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--magenta); display: block; margin-bottom: 6px; }
+.cover-title { font-family: 'Bebas Neue', sans-serif; font-size: 26px; color: var(--black); letter-spacing: 0.03em; display: block; margin-bottom: 6px; }
+.cover-desc { font-size: 12px; color: var(--gray); line-height: 1.5; display: block; max-width: 400px; }
+.cover-btns { display: flex; gap: 8px; flex-shrink: 0; flex-wrap: wrap; align-items: center; }
+.cover-btn-fill { display: inline-flex; align-items: center; gap: 6px; background: var(--magenta); color: #fff; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; padding: 10px 18px; border-radius: 2px; text-decoration: none; white-space: nowrap; transition: background .2s; font-family: 'DM Sans', sans-serif; }
+.cover-btn-fill:hover { background: var(--magenta-dark); }
+.cover-btn-outline { display: inline-flex; align-items: center; gap: 6px; border: 1.5px solid var(--black); color: var(--black); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; padding: 10px 18px; border-radius: 2px; text-decoration: none; white-space: nowrap; transition: all .2s; font-family: 'DM Sans', sans-serif; }
+.cover-btn-outline:hover { background: var(--black); color: var(--white); }
+.uni-badge { background: rgba(13,13,13,0.06); color: var(--gray); font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; border: 1px solid rgba(13,13,13,0.12); margin-left: 6px; vertical-align: middle; }
 
-.photo-card { border-radius: 3px; overflow: hidden; background: var(--white); }
-.photo-grid { display: grid; grid-template-rows: 260px 180px; grid-template-columns: 1fr 1fr; overflow: hidden; }
-.photo-grid img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s ease; }
-.photo-grid img:first-child { grid-column: 1/3; grid-row: 1; }
-.photo-grid img:nth-child(2) { border-top: 2px solid var(--black); border-right: 1px solid var(--black); }
-.photo-grid img:nth-child(3) { border-top: 2px solid var(--black); border-left: 1px solid var(--black); }
-.photo-grid img:hover { transform: scale(1.04); }
-.photo-info { padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; background: var(--white); gap: 12px; }
-.photo-tag { font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--magenta); display: block; margin-bottom: 4px; }
-.photo-title { font-family: 'Bebas Neue', sans-serif; font-size: 26px; color: var(--black); letter-spacing: 0.03em; }
-.photo-badge { display: inline-block; margin-left: 8px; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray); background: rgba(13,13,13,0.06); padding: 4px 10px; border-radius: 2px; border: 1px solid rgba(13,13,13,0.12); vertical-align: middle; }
-.photo-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--magenta); color: #fff; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; padding: 12px 20px; border-radius: 2px; text-decoration: none; white-space: nowrap; transition: background .2s; font-family: 'DM Sans', sans-serif; flex-shrink: 0; }
-.photo-btn:hover { background: var(--magenta-dark); }
-
+/* UGC */
 #ugc { background: var(--black); padding: 100px 48px; }
 .ugc-top { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-bottom: 64px; align-items: end; }
 .ugc-heading { font-family: 'Bebas Neue', sans-serif; font-size: clamp(56px,8vw,100px); color: #fff; line-height: .9; letter-spacing: 0.02em; }
@@ -151,6 +140,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; j
 .ugc-card-sub { font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(245,242,238,.3); text-align: center; }
 .ugc-note { margin-top: 32px; font-size: 11px; color: rgba(245,242,238,.2); letter-spacing: 0.08em; text-align: center; }
 
+/* EXPERIENCE */
 #experience { background: var(--white); padding: 100px 48px; }
 .exp-head { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-bottom: 80px; align-items: end; }
 .exp-heading { font-family: 'Bebas Neue', sans-serif; font-size: clamp(56px,7vw,96px); color: var(--black); line-height: .9; letter-spacing: .02em; }
@@ -167,6 +157,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; j
 .exp-date-tag { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray); text-align: right; padding-top: 6px; white-space: nowrap; }
 .exp-metric { font-family: 'Bebas Neue', sans-serif; font-size: 24px; color: var(--magenta); display: block; margin-top: 8px; }
 
+/* CONTACT */
 #contact { background: var(--magenta); padding: 120px 48px; position: relative; overflow: hidden; }
 .contact-bg { position: absolute; font-family: 'Bebas Neue', sans-serif; font-size: clamp(140px,20vw,260px); color: rgba(255,255,255,0.06); top: 50%; left: 50%; transform: translate(-50%,-50%); white-space: nowrap; pointer-events: none; line-height: 1; }
 .contact-label { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,.6); margin-bottom: 20px; position: relative; z-index: 1; }
@@ -182,16 +173,19 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; j
 .contact-email { display: block; margin-top: 32px; font-family: 'Playfair Display', serif; font-size: clamp(18px,2.5vw,28px); font-style: italic; color: rgba(255,255,255,.5); text-decoration: none; position: relative; z-index: 1; transition: color .2s; }
 .contact-email:hover { color: #fff; }
 
+/* FOOTER */
 footer { background: var(--black); padding: 36px 48px; display: flex; justify-content: space-between; align-items: center; }
 .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: rgba(245,242,238,.4); letter-spacing: 0.08em; }
 .footer-logo span { color: var(--magenta); }
 .footer-note { font-size: 11px; color: rgba(245,242,238,.2); letter-spacing: 0.08em; }
 
+/* ANIMATIONS */
 .fade-up { opacity: 0; transform: translateY(32px); transition: opacity .7s ease, transform .7s ease; }
 .fade-up.visible { opacity: 1; transform: none; }
 .fade-left { opacity: 0; transform: translateX(-24px); transition: opacity .6s ease, transform .6s ease; }
 .fade-left.visible { opacity: 1; transform: none; }
 
+/* LANGUAGE */
 [data-lang] { display: none; }
 [data-lang].active { display: block; }
 span[data-lang] { display: none; }
@@ -199,6 +193,7 @@ span[data-lang].active { display: inline; }
 .about-body[data-lang], .ugc-desc[data-lang], .exp-intro[data-lang] { display: none; }
 .about-body[data-lang].active, .ugc-desc[data-lang].active, .exp-intro[data-lang].active { display: block; }
 
+/* MOBILE */
 @media (max-width: 900px) {
   nav { padding: 16px 20px; }
   .nav-links { display: none; }
@@ -211,11 +206,11 @@ span[data-lang].active { display: inline; }
   .work-top, .projects-wrap { padding: 0 20px; }
   .projects-grid { grid-template-columns: 1fr; }
   .pc, .pc.wide, .pc.narrow, .pc.full { grid-column: span 1; }
-  .photo-grid { grid-template-rows: 200px 140px; }
   .ugc-grid { grid-template-columns: repeat(2,1fr); }
   .ugc-top, .exp-head { grid-template-columns: 1fr; }
   .exp-item { grid-template-columns: 1fr; gap: 8px; }
   footer { flex-direction: column; gap: 12px; text-align: center; }
+  .cover-info { flex-direction: column; align-items: flex-start; }
 }
 </style>
 </head>
@@ -224,8 +219,9 @@ span[data-lang].active { display: inline; }
 <div id="cur"></div>
 <div id="cur-r"></div>
 
+<!-- NAV -->
 <nav>
-  <a href="#hero" class="nav-logo">RC<span>.</span></a>
+  <a href="#hero" class="nav-logo">RCC<span>.</span></a>
   <div class="nav-right">
     <ul class="nav-links">
       <li><a href="#about"><span data-lang="en" class="active">About</span><span data-lang="es">Sobre mí</span></a></li>
@@ -241,6 +237,7 @@ span[data-lang].active { display: inline; }
   </div>
 </nav>
 
+<!-- HERO -->
 <section id="hero">
   <div class="hero-ticker">
     <div class="ticker-inner">
@@ -262,7 +259,7 @@ span[data-lang].active { display: inline; }
       </div>
       <div>
         <span class="hero-name-line">RAPHAELLA</span>
-        <span class="hero-name-line italic">Collado Cahuas</span>
+        <span class="hero-name-line italic">Collado Cahuas.</span>
       </div>
       <div class="hero-subtitle">
         <div class="hero-subtitle-line"></div>
@@ -280,7 +277,7 @@ span[data-lang].active { display: inline; }
       <!-- REPLACE WITH: <img src="hero-photo.jpg" class="hero-photo" alt="Raphaella Collado Cahuas"> -->
       <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;">
         <span style="font-family:'Playfair Display',serif;font-size:15px;font-style:italic;color:rgba(245,242,238,.3);">[ your photo ]</span>
-        <span style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(245,242,238,.15);">replace src in img tag</span>
+        <span style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(245,242,238,.15);">replace with hero-photo.jpg</span>
       </div>
       <div class="hero-badge">Lima, Perú · 2024</div>
       <div class="hero-stat-pill">
@@ -291,6 +288,7 @@ span[data-lang].active { display: inline; }
   </div>
 </section>
 
+<!-- MARQUEE -->
 <div class="marquee-divider">
   <div class="marquee-inner">
     <span class="marquee-item hl">Larcomar</span><span class="marquee-item">·</span>
@@ -306,6 +304,7 @@ span[data-lang].active { display: inline; }
   </div>
 </div>
 
+<!-- ABOUT -->
 <section id="about">
   <div class="about-left">
     <div class="about-bg-word">HOLA</div>
@@ -333,6 +332,7 @@ span[data-lang].active { display: inline; }
   </div>
 </section>
 
+<!-- WORK -->
 <section id="work">
   <div class="work-top fade-up">
     <h2 class="work-heading"><span class="outline">SELECTED</span><br><span class="filled">WORK</span></h2>
@@ -347,104 +347,150 @@ span[data-lang].active { display: inline; }
   <div class="projects-wrap">
     <div class="projects-grid" id="projectsGrid">
 
+      <!-- LARCOMAR — cover + IG + PDF -->
       <div class="pc wide fade-up" data-cat="social">
-        <a class="project-card" href="#" target="_blank">
-          <div class="tp r169" style="background:#1A0A12;"><div class="tp-bg-word">LARCOMAR</div><div class="tp-inner"><span class="tp-label">[ replace with larcomar-1.jpg ]</span></div></div>
-          <div class="project-info">
-            <span class="project-tag">Social Media · Content Strategy · La Familia</span>
-            <div class="project-title">LARCOMAR</div>
-            <div class="project-desc"><span data-lang="en" class="active">Full content strategy, filming & editing for Lima's iconic retail destination.</span><span data-lang="es">Estrategia de contenido, grabación y edición para el destino retail icónico de Lima.</span></div>
-            <span class="project-pill">2024 – Present</span>
+        <div class="cover-card">
+          <img src="larcomar-cover.jpg" alt="Larcomar" class="cover-img">
+          <div class="cover-info">
+            <div>
+              <span class="cover-tag">Social Media · Content Strategy · La Familia</span>
+              <span class="cover-title">LARCOMAR</span>
+              <span class="cover-desc"><span data-lang="en" class="active">Full content strategy, filming & editing for Lima's iconic retail destination.</span><span data-lang="es">Estrategia de contenido, grabación y edición para el destino retail icónico de Lima.</span></span>
+            </div>
+            <div class="cover-btns">
+              <a href="https://www.instagram.com/larcomarperu/" target="_blank" class="cover-btn-outline">Instagram →</a>
+              <a href="larcomar.pdf" target="_blank" class="cover-btn-fill"><span data-lang="en" class="active">View PDF</span><span data-lang="es">Ver PDF</span> →</a>
+            </div>
           </div>
-        </a>
+        </div>
       </div>
 
-      <div class="pc narrow tall fade-up" data-cat="social">
-        <a class="project-card" href="#" target="_blank">
-          <div class="tp r34" style="background:#0D2E2E;"><div class="tp-bg-word">IWANA</div><div class="tp-inner"><span class="tp-label">[ replace with iwana-1.jpg ]</span></div></div>
-          <div class="project-info">
-            <span class="project-tag">Social Media · Growth</span>
-            <div class="project-title">IWANA CAMP</div>
-            <div class="project-desc"><span data-lang="en" class="active">Grew Instagram from 2K to 13K+ followers through organic content strategy.</span><span data-lang="es">Crecí Instagram de 2K a 13K+ seguidores.</span></div>
-            <span class="project-pill">2K → 13K ↑</span>
+      <!-- IWANA CAMP — cover + IG + PDF -->
+      <div class="pc narrow fade-up" data-cat="social">
+        <div class="cover-card">
+          <img src="iwana-cover.jpg" alt="Iwana Camp" class="cover-img">
+          <div class="cover-info">
+            <div>
+              <span class="cover-tag">Social Media · Growth</span>
+              <span class="cover-title">IWANA CAMP</span>
+              <span class="cover-desc"><span data-lang="en" class="active">Grew Instagram from 2K to 13K+ followers through organic content strategy.</span><span data-lang="es">Crecí Instagram de 2K a 13K+ seguidores.</span></span>
+            </div>
+            <div class="cover-btns">
+              <a href="https://www.instagram.com/iwanacamp/" target="_blank" class="cover-btn-outline">Instagram →</a>
+              <a href="iwana.pdf" target="_blank" class="cover-btn-fill"><span data-lang="en" class="active">View PDF</span><span data-lang="es">Ver PDF</span> →</a>
+            </div>
           </div>
-        </a>
+        </div>
       </div>
 
+      <!-- PARQUE LA MOLINA — cover + IG + PDF -->
       <div class="pc fade-up" data-cat="social">
-        <a class="project-card" href="#" target="_blank">
-          <div class="tp r169" style="background:#1C1410;"><div class="tp-bg-word">PLM</div><div class="tp-inner"><span class="tp-label">[ replace with parque-la-molina-1.jpg ]</span></div></div>
-          <div class="project-info">
-            <span class="project-tag">Social Media · Retail · La Familia</span>
-            <div class="project-title">PARQUE LA MOLINA</div>
-            <div class="project-desc"><span data-lang="en" class="active">Content strategy and campaign management for launch. Despliegue digital 2024.</span><span data-lang="es">Estrategia de contenido y gestión de campaña de lanzamiento.</span></div>
-            <span class="project-pill">2024</span>
+        <div class="cover-card">
+          <img src="parque-la-molina-cover.jpg" alt="Parque La Molina" class="cover-img">
+          <div class="cover-info">
+            <div>
+              <span class="cover-tag">Social Media · Retail · La Familia</span>
+              <span class="cover-title">PARQUE LA MOLINA</span>
+              <span class="cover-desc"><span data-lang="en" class="active">Content strategy and campaign management for launch.</span><span data-lang="es">Estrategia de contenido y gestión de campaña de lanzamiento.</span></span>
+            </div>
+            <div class="cover-btns">
+              <a href="https://www.instagram.com/parquelamolina/" target="_blank" class="cover-btn-outline">Instagram →</a>
+              <a href="parque-la-molina.pdf" target="_blank" class="cover-btn-fill"><span data-lang="en" class="active">View PDF</span><span data-lang="es">Ver PDF</span> →</a>
+            </div>
           </div>
-        </a>
+        </div>
       </div>
 
+      <!-- FAHRENHEIT DDB — cover + PDF -->
+      <div class="pc full fade-up" data-cat="social">
+        <div class="cover-card">
+          <img src="fahrenheit-cover.jpg" alt="Fahrenheit DDB" class="cover-img wide">
+          <div class="cover-info">
+            <div>
+              <span class="cover-tag">Agency · Community Management · 2022–2024</span>
+              <span class="cover-title">FAHRENHEIT DDB</span>
+              <span class="cover-desc"><span data-lang="en" class="active">Community management and content strategy for San Fernando, Pilot and Pegafan.</span><span data-lang="es">Community management y estrategia de contenido para San Fernando, Pilot y Pegafan.</span></span>
+            </div>
+            <div class="cover-btns">
+              <a href="fahrenheit.pdf" target="_blank" class="cover-btn-fill"><span data-lang="en" class="active">View PDF</span><span data-lang="es">Ver PDF</span> →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BOTANICAL GARDEN — cover + PDF -->
       <div class="pc wide fade-up" data-cat="styling">
-        <div class="photo-card">
-          <div class="photo-grid">
-            <img src="botanical-garden-1.jpg" alt="Botanical Garden">
-            <img src="botanical-garden-2.jpg" alt="Botanical Garden">
-            <img src="botanical-garden-3.jpg" alt="Botanical Garden">
-          </div>
-          <div class="photo-info">
+        <div class="cover-card">
+          <img src="botanical-garden-cover.jpg" alt="Botanical Garden" class="cover-img">
+          <div class="cover-info">
             <div>
-              <span class="photo-tag">Fashion Styling · Prada</span>
-              <span class="photo-title">BOTANICAL GARDEN<span class="photo-badge">University</span></span>
+              <span class="cover-tag">Fashion Styling · Prada <span class="uni-badge">University</span></span>
+              <span class="cover-title">BOTANICAL GARDEN</span>
+              <span class="cover-desc"><span data-lang="en" class="active">Luxury brand styling project inspired by Prada. Editorial collection with botanical concept.</span><span data-lang="es">Proyecto de styling de lujo inspirado en Prada. Colección editorial con concepto botánico.</span></span>
             </div>
-            <a href="botanical-garden.pdf" target="_blank" class="photo-btn"><span data-lang="en" class="active">View project</span><span data-lang="es">Ver proyecto</span> →</a>
+            <div class="cover-btns">
+              <a href="botanical-garden.pdf" target="_blank" class="cover-btn-fill"><span data-lang="en" class="active">View PDF</span><span data-lang="es">Ver PDF</span> →</a>
+            </div>
           </div>
         </div>
       </div>
 
+      <!-- ESCARLATA EYEWEAR — cover + PDF -->
       <div class="pc narrow fade-up" data-cat="styling">
-        <div class="photo-card">
-          <div class="photo-grid" style="grid-template-rows:220px 150px;">
-            <img src="escarlata-1.jpg" alt="Escarlata Eyewear">
-            <img src="escarlata-2.jpg" alt="Escarlata Eyewear">
-            <img src="escarlata-3.jpg" alt="Escarlata Eyewear">
-          </div>
-          <div class="photo-info">
+        <div class="cover-card">
+          <img src="escarlata-cover.jpg" alt="Escarlata Eyewear" class="cover-img">
+          <div class="cover-info">
             <div>
-              <span class="photo-tag">Fashion Styling · Genderless</span>
-              <span class="photo-title">ESCARLATA<span class="photo-badge">University</span></span>
+              <span class="cover-tag">Fashion Styling · Genderless <span class="uni-badge">University</span></span>
+              <span class="cover-title">ESCARLATA EYEWEAR</span>
+              <span class="cover-desc"><span data-lang="en" class="active">Fashion styling for Peruvian eyewear brand. Genderless concept for brand launch.</span><span data-lang="es">Styling de moda para marca peruana de lentes. Concepto Genderless para lanzamiento.</span></span>
             </div>
-            <a href="escarlata.pdf" target="_blank" class="photo-btn"><span data-lang="en" class="active">View</span><span data-lang="es">Ver</span> →</a>
+            <div class="cover-btns">
+              <a href="escarlata.pdf" target="_blank" class="cover-btn-fill"><span data-lang="en" class="active">View PDF</span><span data-lang="es">Ver PDF</span> →</a>
+            </div>
           </div>
         </div>
       </div>
 
+      <!-- GOD COMPLEX — cover + PDF -->
       <div class="pc fade-up" data-cat="production">
-        <a class="project-card" href="#" target="_blank">
-          <div class="tp r169" style="background:#0A0A08;"><div class="tp-bg-word">GUCCI</div><div class="tp-inner"><span class="tp-label">[ replace with god-complex-1.jpg ]</span></div></div>
-          <div class="project-info">
-            <span class="project-tag">Production · Art Direction · University Project</span>
-            <div class="project-title">GOD COMPLEX</div>
-            <div class="project-desc"><span data-lang="en" class="active">Advertising production inspired by Gucci. Budget management, location scouting, creative direction.</span><span data-lang="es">Producción publicitaria inspirada en Gucci. Manejo de presupuesto, scouting, dirección creativa.</span></div>
-            <span class="uni-badge">University</span>
+        <div class="cover-card">
+          <img src="god-complex-cover.jpg" alt="God Complex" class="cover-img">
+          <div class="cover-info">
+            <div>
+              <span class="cover-tag">Production · Art Direction <span class="uni-badge">University</span></span>
+              <span class="cover-title">GOD COMPLEX</span>
+              <span class="cover-desc"><span data-lang="en" class="active">Advertising production inspired by Gucci. Budget management, location scouting, creative direction.</span><span data-lang="es">Producción publicitaria inspirada en Gucci. Manejo de presupuesto, scouting, dirección creativa.</span></span>
+            </div>
+            <div class="cover-btns">
+              <a href="god-complex.pdf" target="_blank" class="cover-btn-fill"><span data-lang="en" class="active">View PDF</span><span data-lang="es">Ver PDF</span> →</a>
+            </div>
           </div>
-        </a>
+        </div>
       </div>
 
+      <!-- IRAI SWIMWEAR — cover + PDF -->
       <div class="pc fade-up" data-cat="branding">
-        <a class="project-card" href="#" target="_blank">
-          <div class="tp r169" style="background:#0A2020;"><div class="tp-bg-word" style="font-style:italic;font-family:'Playfair Display',serif;">irai</div><div class="tp-inner"><span class="tp-label">[ replace with irai-1.jpg ]</span></div></div>
-          <div class="project-info">
-            <span class="project-tag">Branding · Fashion · University Project</span>
-            <div class="project-title">IRAI SWIMWEAR</div>
-            <div class="project-desc"><span data-lang="en" class="active">Brand identity and visual guidelines for Peruvian swimwear brand.</span><span data-lang="es">Identidad de marca y manual visual para marca peruana de trajes de baño.</span></div>
-            <span class="uni-badge">University</span>
+        <div class="cover-card">
+          <img src="irai-cover.jpg" alt="Irai Swimwear" class="cover-img">
+          <div class="cover-info">
+            <div>
+              <span class="cover-tag">Branding · Fashion <span class="uni-badge">University</span></span>
+              <span class="cover-title">IRAI SWIMWEAR</span>
+              <span class="cover-desc"><span data-lang="en" class="active">Brand identity and visual guidelines for Peruvian swimwear brand.</span><span data-lang="es">Identidad de marca y manual visual para marca peruana de trajes de baño.</span></span>
+            </div>
+            <div class="cover-btns">
+              <a href="irai.pdf" target="_blank" class="cover-btn-fill"><span data-lang="en" class="active">View PDF</span><span data-lang="es">Ver PDF</span> →</a>
+            </div>
           </div>
-        </a>
+        </div>
       </div>
 
     </div>
   </div>
 </section>
 
+<!-- UGC -->
 <section id="ugc">
   <div class="ugc-top">
     <h2 class="ugc-heading fade-up">UGC<br><span class="mgn">CONTENT</span></h2>
@@ -462,6 +508,7 @@ span[data-lang].active { display: inline; }
   <p class="ugc-note">↑ Replace each href with your actual video URLs from Instagram or TikTok</p>
 </section>
 
+<!-- EXPERIENCE -->
 <section id="experience">
   <div class="exp-head">
     <h2 class="exp-heading fade-up">WORK<br><span class="mgn">HISTORY</span></h2>
@@ -473,27 +520,45 @@ span[data-lang].active { display: inline; }
   <div>
     <div class="exp-item fade-up">
       <div class="exp-num">01</div>
-      <div><div class="exp-role">CONTENT MANAGER</div><div class="exp-company">La Familia</div><div class="exp-desc"><span data-lang="en" class="active">End-to-end content creation, filming and editing for Larcomar and Parque La Molina. Content strategy, grid planning and multi-platform execution.</span><span data-lang="es">Creación integral de contenido, grabación y edición para Larcomar y Parque La Molina. Estrategia de contenido, grilla y ejecución multiplataforma.</span></div></div>
+      <div>
+        <div class="exp-role">CONTENT MANAGER</div>
+        <div class="exp-company">La Familia</div>
+        <div class="exp-desc"><span data-lang="en" class="active">End-to-end content creation, filming and editing for Larcomar and Parque La Molina. Content strategy, grid planning and multi-platform execution.</span><span data-lang="es">Creación integral de contenido, grabación y edición para Larcomar y Parque La Molina. Estrategia de contenido, grilla y ejecución multiplataforma.</span></div>
+      </div>
       <div class="exp-date-tag">Jun 2024<br><span data-lang="en" class="active">Present</span><span data-lang="es">Actual</span></div>
     </div>
     <div class="exp-item fade-up">
       <div class="exp-num">02</div>
-      <div><div class="exp-role">CONTENT CREATOR</div><div class="exp-company">Iwana Camp</div><div class="exp-desc"><span data-lang="en" class="active">Grew Instagram following from 2,000 to 13,000+ through organic content strategy, video production and community management.</span><span data-lang="es">Crecí Instagram de 2,000 a 13,000+ seguidores con estrategia de contenido orgánico, producción de video y gestión de comunidad.</span></div><span class="exp-metric">2K → 13K+</span></div>
+      <div>
+        <div class="exp-role">CONTENT CREATOR</div>
+        <div class="exp-company">Iwana Camp</div>
+        <div class="exp-desc"><span data-lang="en" class="active">Grew Instagram following from 2,000 to 13,000+ through organic content strategy, video production and community management.</span><span data-lang="es">Crecí Instagram de 2,000 a 13,000+ seguidores con estrategia de contenido orgánico, producción de video y gestión de comunidad.</span></div>
+        <span class="exp-metric">2K → 13K+</span>
+      </div>
       <div class="exp-date-tag">Apr 2022<br><span data-lang="en" class="active">Present</span><span data-lang="es">Actual</span></div>
     </div>
     <div class="exp-item fade-up">
       <div class="exp-num">03</div>
-      <div><div class="exp-role">COMMUNITY MANAGER</div><div class="exp-company">Fahrenheit DDB</div><div class="exp-desc"><span data-lang="en" class="active">Social media and content strategy for San Fernando, Pilot and Pegafan. Platform-specific content approaches aligned to each brand's voice.</span><span data-lang="es">Estrategia de redes y contenido para San Fernando, Pilot y Pegafan. Enfoques de contenido por plataforma alineados al tono de cada marca.</span></div></div>
+      <div>
+        <div class="exp-role">COMMUNITY MANAGER</div>
+        <div class="exp-company">Fahrenheit DDB</div>
+        <div class="exp-desc"><span data-lang="en" class="active">Social media and content strategy for San Fernando, Pilot and Pegafan. Platform-specific content approaches aligned to each brand's voice.</span><span data-lang="es">Estrategia de redes y contenido para San Fernando, Pilot y Pegafan. Enfoques de contenido por plataforma alineados al tono de cada marca.</span></div>
+      </div>
       <div class="exp-date-tag">Aug 2022<br>Jan 2024</div>
     </div>
     <div class="exp-item fade-up">
       <div class="exp-num">04</div>
-      <div><div class="exp-role"><span data-lang="en" class="active">MARKETING COORDINATOR</span><span data-lang="es">COORDINADORA DE MARKETING</span></div><div class="exp-company">Club House Perú</div><div class="exp-desc"><span data-lang="en" class="active">Content strategy, budget management, event production and PR activations across all digital channels.</span><span data-lang="es">Estrategia de contenido, manejo de presupuesto, producción de eventos y activaciones de PR en canales digitales.</span></div></div>
+      <div>
+        <div class="exp-role"><span data-lang="en" class="active">MARKETING COORDINATOR</span><span data-lang="es">COORDINADORA DE MARKETING</span></div>
+        <div class="exp-company">Club House Perú</div>
+        <div class="exp-desc"><span data-lang="en" class="active">Content strategy, budget management, event production and PR activations across all digital channels.</span><span data-lang="es">Estrategia de contenido, manejo de presupuesto, producción de eventos y activaciones de PR en canales digitales.</span></div>
+      </div>
       <div class="exp-date-tag">May 2022<br>Jul 2023</div>
     </div>
   </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
   <div class="contact-bg">LET'S TALK</div>
   <p class="contact-label"><span data-lang="en" class="active">Get in touch</span><span data-lang="es">Contacto</span></p>
@@ -510,8 +575,9 @@ span[data-lang].active { display: inline; }
   <a href="mailto:raphaella.collado@gmail.com" class="contact-email fade-up">raphaella.collado@gmail.com</a>
 </section>
 
+<!-- FOOTER -->
 <footer>
-  <span class="footer-logo">RC<span>.</span></span>
+  <span class="footer-logo">RCC<span>.</span></span>
   <span class="footer-note">Raphaella Collado Cahuas · Lima, Perú · 2024</span>
 </footer>
 
